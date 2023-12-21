@@ -1,0 +1,10 @@
+{
+  "author": "Jacob Hadnett-Hunter",
+  "dependencies": {"com.unity.mathematics": "1.2.6"},
+  "description": "AR Glasses in VR Simulator",
+  "displayName": "AR-Simulator",
+  "license": "MIT",
+  "name": "org.jmehh.ar-simulator",
+  "repository": "github:jmehh/ar-simulator",
+  "version": "0.0.1"
+}

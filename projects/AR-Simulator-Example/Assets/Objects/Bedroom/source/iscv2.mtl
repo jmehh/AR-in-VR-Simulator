@@ -1,0 +1,124 @@
+# 
+# Wavefront material file
+# Created in RealityCapture v1.0.2
+# www.capturingreality.com
+# 
+
+newmtl iscv2_Material
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+
+newmtl iscv2_Material_u1_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u1_v1.png
+
+newmtl iscv2_Material_u2_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u2_v1.png
+
+newmtl iscv2_Material_u3_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u3_v1.png
+
+newmtl iscv2_Material_u4_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u4_v1.png
+
+newmtl iscv2_Material_u1_v2
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u1_v2.png
+
+newmtl iscv2_Material_u2_v2
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u2_v2.png
+
+newmtl iscv2_Material_u3_v2
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u3_v2.png
+
+newmtl iscv2_Material_u4_v2
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u4_v2.png
+
+newmtl iscv2_Material_u1_v3
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u1_v3.png
+
+newmtl iscv2_Material_u2_v3
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u2_v3.png
+
+newmtl iscv2_Material_u3_v3
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u3_v3.png
+
+newmtl iscv2_Material_u4_v3
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u4_v3.png
+
+newmtl iscv2_Material_u1_v4
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u1_v4.png
+
+newmtl iscv2_Material_u2_v4
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd iscv2_u2_v4.png
