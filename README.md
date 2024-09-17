@@ -27,6 +27,8 @@ Please note that as of September 2024 the code here is a minimalist implementati
 
 The current version includes an example Unity project making use of fhernand's 'Bedroom' scene [(link)](https://sketchfab.com/3d-models/bedroom-869e6ec859a84240b9a099ae829f47fa).
 
+![Alt Text](./docs/simgif.gif)
+
 Gaussian Splatting can be used to render the backgound envrionments instead by importing the [UnityGaussianSplatting](https://github.com/aras-p/UnityGaussianSplatting/tree/main) project by Aras Pranckevičius.
 
 ## Using the toolbox
