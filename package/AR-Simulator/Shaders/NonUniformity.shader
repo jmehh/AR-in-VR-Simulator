@@ -45,7 +45,7 @@ Shader "ARSimulator/NonUniformity"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 float4 eff = tex2D(_NonUniformityTex, i.uv);
-  
+                
                 return eff * col;
             }
             ENDCG

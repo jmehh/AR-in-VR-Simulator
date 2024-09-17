@@ -48,6 +48,10 @@ Shader "ARSimulator/LightBlend"
 
             float _nonLinearZ;
 
+            float _visorRelLuminance;
+            float _displayRelLuminance;
+            float _worldRelLuminance;
+
             fixed4 frag(v2f i) : SV_Target
             {
                 float4 ndc = float4((i.uv.xy - float2(0.5, 0.5)) * 2.0, _nonLinearZ, 1.0);
@@ -62,16 +66,16 @@ Shader "ARSimulator/LightBlend"
                 
                 float2 arUV = (arNDC + float2(1.0, 1.0)) * 0.5;
 
+                float4 composit;
+
                 if (all(arUV >= 0.0) && all(arUV <= 1.0)) {
-                    //return float4(arUV, 0, 1);
                     float4 arCol = tex2D(_ARTexture, arUV);
-
-                    //return tex2D(_MainTex, i.uv) * (1.0 - arCol.a) + arCol.a * arCol;
-                    return tex2D(_MainTex, i.uv) * 0.2 + 3.0 * arCol;
-
+                    composit = _worldRelLuminance * tex2D(_MainTex, i.uv) + _displayRelLuminance * arCol;
+                } else {
+                    composit = _visorRelLuminance * tex2D(_MainTex, i.uv);
                 }
-
-                return 0.2* tex2D(_MainTex, i.uv);
+                
+                return composit;
             }
             ENDCG
         }

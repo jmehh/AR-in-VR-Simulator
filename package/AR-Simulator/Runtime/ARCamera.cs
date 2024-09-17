@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class ARCamera : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ARCamera : MonoBehaviour
     private RenderTexture[] tmpRTs;
 
     public bool isLeft;
+
+    bool screenshot = false;
     void Start()
     {
         arCam = GetComponent<Camera>();
@@ -24,23 +27,28 @@ public class ARCamera : MonoBehaviour
         if (isLeft)
         {
             arCam.projectionMatrix = DisplayConfigurationManager.activeConfiguration.leftProjectionMatrix;
-            //arCam.projectionMatrix = eyeCam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Left);
-            //arCam.worldToCameraMatrix = eyeCam.GetStereoViewMatrix(Camera.StereoscopicEye.Left);
+            arCam.worldToCameraMatrix = eyeCam.GetStereoViewMatrix(Camera.StereoscopicEye.Left);
+
         }
         else
         {
             arCam.projectionMatrix = DisplayConfigurationManager.activeConfiguration.rightProjectionMatrix;
-            //arCam.projectionMatrix = eyeCam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right);
-            //arCam.worldToCameraMatrix = eyeCam.GetStereoViewMatrix(Camera.StereoscopicEye.Right);
+            arCam.worldToCameraMatrix = eyeCam.GetStereoViewMatrix(Camera.StereoscopicEye.Right);
+
+        }
+
+        if (arCam.targetTexture == null)
+        {
+            RenderTexture srt = new RenderTexture(DisplayConfigurationManager.activeConfiguration.ARRenderResX, DisplayConfigurationManager.activeConfiguration.ARRenderResY, 0, RenderTextureFormat.Default);
+            arCam.targetTexture = srt;
         }
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        if (rt == null || rt.width != source.width)
-        {
 
- 
+        if (rt == null || rt.width != source.width)
+        { 
             rt = new RenderTexture(source.width, source.height, 0, RenderTextureFormat.Default);
             rt_tmp_1 = new RenderTexture(source.width, source.height, 0, RenderTextureFormat.Default);
             rt_tmp_2 = new RenderTexture(source.width, source.height, 0, RenderTextureFormat.Default);
@@ -63,7 +71,8 @@ public class ARCamera : MonoBehaviour
             if (blitCount == 0)
             {
                 Graphics.Blit(source, tmpRTs[0], mat);
-            } else
+            } 
+            else
             {
                 Graphics.Blit(tmpRTs[(blitCount - 1) % 2], tmpRTs[blitCount % 2], mat);
             }
@@ -72,4 +81,5 @@ public class ARCamera : MonoBehaviour
 
         Graphics.Blit(tmpRTs[(blitCount - 1) % 2], rt);
     }
+
 }

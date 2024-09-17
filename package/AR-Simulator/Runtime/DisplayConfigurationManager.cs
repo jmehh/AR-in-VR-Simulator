@@ -29,6 +29,11 @@ public class DisplayConfigurationManager : MonoBehaviour
         [SerializeField] public List<Material> rightARMaterials;
         [SerializeField] public List<Material> leftEyeMaterials;
         [SerializeField] public List<Material> rightEyeMaterials;
+        [SerializeField] public float visorRelLuminance;
+        [SerializeField] public float displayRelLuminance;
+        [SerializeField] public float worldRelLuminance;
+        [SerializeField] public int ARRenderResX;
+        [SerializeField] public int ARRenderResY;
     }
 
     public static DisplayConfiguration activeConfiguration;
